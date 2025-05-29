@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--연습 : 이 html을 보고 (MyBean053) dto와 request handler method 만들기-->
+<h1 th:text="${val.weight}">Lorem.</h1>
+<h1 th:text="${val.studentNumber}">Commodi?</h1>
+<h1 th:text="${val.married}">Quam.</h1>
+<h1 th:text="${val.info}">Atque?</h1>
+<hr>
+<h1 th:text="${val['weight']}">Natus.</h1>
+<h1 th:text="${val['info']}">Repellendus.</h1>
+<h1 th:text="${val['studentNumber']}">Repellat.</h1>
+<h1 th:text="${val['married']}">Aperiam!</h1>
+<hr>
+<h1>Quos.</h1>
+</body>
+</html>

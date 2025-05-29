@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>list</h1>
+<h2 th:text="${list[0]}">Lorem.</h2>
+<h2 th:text="${list[1]}">Ipsam?</h2>
+<h2 th:text="${list[2]}">Explicabo!</h2>
+
+<hr>
+
+<h1>set</h1>
+<h2 th:text="${cars[0]}">Lolem1</h2>
+<h2 th:text="${cars[1]}">Lolem2</h2>
+<h2 th:text="${cars[2]}">Lolem3</h2>
+
+<hr>
+
+<!--th:each-->
+<h1>Set each 사용</h1>
+<h2 th:each="car: ${cars}" th:text="${car}">Lorem.</h2>
+
+<hr>
+
+<h1>List에서 each사용</h1>
+<h2 th:each="item:${list}" th:text="${item}">lroem</h2>
+</body>
+</html>
