@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--산술 연산 +, -, *, /, %-->
+<h1 th:text="${person.number - 5}"></h1>
+<h1 th:text="${person.number + 5}"></h1>
+<h1 th:text="${person.number * 5}"></h1>
+<h1 th:text="${person.number / 5}"></h1>
+<h1 th:text="${person.number % 5}"></h1>
+<h1 th:text="101 + 5"></h1>
+<h1 th:text="101 / 5"></h1>
+<hr>
+
+<!--숫자는 따옴표 없이도 사용가능.-->
+<h1 th:text="${person.number}"></h1>
+<h1 th:text="101"></h1>
+
+<!--text 는 ''사용-->
+<h1 th:text="'텍스트 작성은 작은 따옴표사용'"></h1>
+<!--<h1 th:text="텍스트 작성은 작은 따옴표사용"></h1>-->
+<!--bar||-->
+<h1 th:text="|회사 ${person.company[0]}|"></h1>
+<!--문자열 연결-->
+<h1 th:text="'회사 '+${person.company[0]}"></h1>
+<h1>회사 [[${person.company[0]}]]</h1>
+<h1>회사 <span th:text="${person.company[0]}"></span></h1>
+</body>
+</html>

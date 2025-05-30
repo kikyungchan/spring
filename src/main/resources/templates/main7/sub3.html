@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /* css주석 */
+    </style>
+</head>
+<body>
+<!-- html주석 -->
+<!-- 주석은 페이지소스에 흔적이 남으므로
+     중요한 내용 작성 금지.-->
+<!--/*<h1 th:text="${'hello'}">text</h1>*/-->
+<ul>
+    <li th:each="item: ${myList}" th:text="${item}">some item1</li>
+    <!--/*-->
+    <!--    이 주석으로 감싸면 렌더링시 사라짐-->
+    <!--    근데 테스트할땐 나옴.-->
+    <li>some item2</li>
+    <li>some item3</li>
+    <li>some item4</li>
+    <!--*/-->
+</ul>
+
+<!--/* 타임리프주석 : 렌더링할때 제거됨(소스흔적없음) */-->
+<!--일반주석-->
+<script>
+    // js주석
+    /*
+    js 여러줄 주석
+     */
+</script>
+</body>
+</html>
