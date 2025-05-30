@@ -29,15 +29,15 @@ public class Controller06 {
         return "main6/sub2";
     }
 
-    @RequestMapping("sub3")
-    public String sub3(Model model) {
-        model.addAttribute("people",
-                List.of(new MyBean053(99.5, 10, true, "donald"),
-                        new MyBean053(88.4, 20, false, "tesla"),
-                        new MyBean053(77.3, 30, true, "musk"),
-                        new MyBean053(66.2, 40, false, "elon")));
-        return "main6/sub3";
-    }
+//    @RequestMapping("sub3")
+//    public String sub3(Model model) {
+//        model.addAttribute("people",
+//                List.of(new MyBean053(99.5, 10, true, "donald"),
+//                        new MyBean053(88.4, 20, false, "tesla"),
+//                        new MyBean053(77.3, 30, true, "musk"),
+//                        new MyBean053(66.2, 40, false, "elon")));
+//        return "main6/sub3";
+//    }
 
     //table형식으로 출력되도록 html코드 완성
     @RequestMapping("sub4")

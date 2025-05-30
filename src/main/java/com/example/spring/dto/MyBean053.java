@@ -8,8 +8,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class MyBean053 {
-    private Double weight;
     private Integer studentNumber;
-    private Boolean married;
+    private Double weight;
     private String info;
+    private Boolean married;
 }

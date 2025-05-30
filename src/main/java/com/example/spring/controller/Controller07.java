@@ -78,21 +78,21 @@ public class Controller07 {
     //번호 33.3 musk ♥️
     //              💔
 
-    @RequestMapping("sub9")
-    public String sub9(Model model) {
-        model.addAttribute("name", "son");
-        model.addAttribute("married", "false");
-        model.addAttribute("working", "true");
-        model.addAttribute("age", 55);
-        model.addAttribute("city", null);
-        model.addAttribute("students",
-                List.of(new MyBean053(10.0, 3, true, "trump"),
-                        new MyBean053(20.1, 44, false, "donal"),
-                        new MyBean053(30.1, 55, true, "musk"),
-                        new MyBean053(40.1, 66, false, "elvis"),
-                        new MyBean053(50.1, 77, true, "elon")));
-        return "main7/sub9";
-    }
+//    @RequestMapping("sub9")
+//    public String sub9(Model model) {
+//        model.addAttribute("name", "son");
+//        model.addAttribute("married", "false");
+//        model.addAttribute("working", "true");
+//        model.addAttribute("age", 55);
+//        model.addAttribute("city", null);
+//        model.addAttribute("students",
+//                List.of(new MyBean053(10.0, 3, true, "trump"),
+//                        new MyBean053(20.1, 44, false, "donal"),
+//                        new MyBean053(30.1, 55, true, "musk"),
+//                        new MyBean053(40.1, 66, false, "elvis"),
+//                        new MyBean053(50.1, 77, true, "elon")));
+//        return "main7/sub9";
+//    }
 
 
 }
