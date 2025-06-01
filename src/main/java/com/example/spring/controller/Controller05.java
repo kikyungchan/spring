@@ -4,7 +4,6 @@ import com.example.spring.dto.*;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 import java.util.Map;
@@ -43,7 +42,7 @@ public class Controller05 {
 
     @RequestMapping("sub3")
     public String sub3(Model model) {
-        MyBean053 mb = new MyBean053();
+        MyBean053 mb = new MyBean053(40, 66.0, "elvis", false);
         mb.setWeight(86.3);
         mb.setStudentNumber(30);
         mb.setMarried(false);

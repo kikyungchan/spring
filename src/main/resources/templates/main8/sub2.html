@@ -1,35 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <style>
-        .italic {
-            font-style: italic;
-        }
-
-        .bold {
-            font-weight: bold;
-        }
-
-    </style>
+  <style>
+    .italic {
+      font-style: italic;
+    }
+    .bold {
+      font-weight: bold;
+    }
+  </style>
 </head>
 <body>
 <table>
-    <thead>
-    <tr>
-        <th>이름</th>
-        <th>생일</th>
-        <th>가격</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr th:each="item:${myList}">
-        <td th:text="${item.name}"></td>
-        <td th:text="${item.birthDate}"></td>
-        <td th:text="${item.price}" class="italic" th:classappend="${item.price>=500}?'bold'"></td>
-    </tr>
-    </tbody>
+  <thead>
+  <tr>
+    <th>이름</th>
+    <th>생일</th>
+    <th>가격</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="s :${myList}">
+    <td th:text="${s.name}"></td>
+    <td th:text="${s.birthDate}"></td>
+    <td class="italic"
+        th:text="${s.price}"
+        th:classappend="${s.price>=5000}?'bold'"></td>
+    <td></td>
+    <td></td>
+  </tr>
+  </tbody>
 </table>
 </body>
 </html>
