@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3> /main9/sub4 </h3>
+
+<form action="">
+
+<!--    연습 : 여러-취미를 중복 선택 가능한 select 요소를 작성해보기-->
+    <select name="hobby" id="" multiple required>
+        <option value="soccer">축구</option>
+        <option value="basket">농구</option>
+        <option value="base">야구</option>
+        <option value="weight" selected>웨이트</option>
+        <option value="yousanso">유산소</option>
+    </select>
+    <!--    select : 여러 값 중에 선택 가능한 요소-->
+    <select name="country" id="" multiple required>
+        <option value="korea" selected>한국</option>
+        <option value="usa">미국</option>
+        <option value="uk">영국</option>
+        <option value="japan">일본</option>
+        <option value="china" selected>중국</option>
+    </select>
+    <!--    select : 여러 값 중에 선택 가능한 요소-->
+    <select name="fruit" id="">
+        <option value="apple">사과</option>
+        <option value="melon">메론</option>
+        <option value="mango" selected>망고</option>
+        <option value="lemon">레몬</option>
+        <option value="banana">바나나</option>
+    </select>
+    <div>
+        <input type="submit" value="전송">
+    </div>
+</form>
+<hr>
+<form action="">
+    <div>
+        <!--        textarea :긴 텍스트 작성용-->
+        <textarea name="info3" id="" cols="30" rows="10"
+                  placeholder="정보 입력하세요"
+                  required
+        ></textarea>
+
+    </div>
+    <div>
+        <!--        textarea :긴 텍스트 작성용-->
+        <textarea name="info2" id="" cols="30" rows="10">기본텍스트입력</textarea>
+
+    </div>
+    <div>
+        <!--        textarea :긴 텍스트 작성용-->
+        <textarea name="info" id="" cols="30" rows="10"></textarea>
+
+    </div>
+    <div>
+        <input type="text" name="city">
+    </div>
+    <div>
+        <input type="submit" value="전송">
+    </div>
+
+</form>
+
+<hr>
+<form th:action="@{/main9/sub13}">
+    <!--    request handler method를 보고 아래 input요소들 만들기-->
+    <div>
+        <label for="input1">도시</label>
+        <input type="text" id="input1" name="city">
+    </div>
+    <div>
+        <label for="input2">나이</label>
+        <input type="number" id="input2" name="age">
+    </div>
+    <div>
+        <label for="input3">점수</label>
+        <input type="number" step="0.01" id="input3" name="score">
+    </div>
+    <div>
+        <label for="check1">사과</label>
+        <input type="checkbox" id="check1" name="fruits" value="apple">
+        <label for="check2">망고</label>
+        <input type="checkbox" id="check2" name="fruits" value="mango">
+        <label for="check3">멜론</label>
+        <input type="checkbox" id="check3" name="fruits" value="melon">
+    </div>
+    <div>
+        <label for="radio1">동의</label>
+        <input type="radio" name="accepted" id="radio1" value="true">
+        <label for="radio2">동의안함</label>
+        <input type="radio" name="accepted" id="radio2" value="false">
+    </div>
+
+    <div>
+        <input type="submit" value="전송">
+    </div>
+</form>
+<hr>
+
+<form action="">
+    <!--    required : 필수 입력-->
+    <input type="text" name="city" required>
+    <!--    multiple : 여러개 선택 가능-->
+    <input type="file" name="f" id="" multiple>
+    <!--    placeholder : 입력할 값의 hint-->
+    <input type="text" name="address" placeholder="주소를 입력하세요.">
+    <!--    readonly는 변경불가-->
+    <input type="text" name="name" value="홍길동" readonly>
+    <input type="submit">
+
+</form>
+<form action="@{/main9/sub12}">
+    <!--연습 : 3개의 칸트리 중에 하나만 선택할 수 있는 라디오 버튼 만들기-->
+    <div>
+        <label for="hobby=soccer">축구</label>
+        <input type="radio" name="hobby" id="hobby=soccer" value="축구">
+        <label for="hobby=basketball">농구</label>
+        <input type="radio" name="hobby" id="hobby=basketball" value="농구">
+        <label for="hobby=baseball">야구</label>
+        <input type="radio" name="hobby" id="hobby=baseball" value="야구">
+    </div>
+    <!--radio button : 같은 name 중에 하나의 값만 선택 가능-->
+    <div>
+        <label for="radio=mango">망고</label>
+        <input type="radio" name="fruit" id="radio=mango" value="mango">
+        <label for="radio=melon">멜론</label>
+        <input type="radio" name="fruit" id="radio=melon" value="melon" checked>
+        <label for="radio=apple">사과</label>
+        <input type="radio" name="fruit" id="radio=apple" value="apple">
+        <input type="submit" value="전송">
+    </div>
+</form>
+
+<hr>
+<form action="@{/main9/sub11}">
+    <!--    label = 특정 input에 붙인 텍스트-->
+    <label for="input=mango">
+        망고
+    </label>
+    <input type="checkbox" name="fruit" id="input=mango" value="mango">
+    <label for="input=melon">
+        메론
+    </label>
+    <input type="checkbox" name="fruit" id="input=melon" value="melon">
+    <label for="input=apple">
+        사과
+    </label>
+    <input type="checkbox" name="fruit" id="input=apple" value="apple">
+    <div>
+        <label for="input=text">
+            이름
+        </label>
+        <input type="text" id="input=text" name="name" value="머스크">
+    </div>
+</form>
+<hr>
+<form action="@{/main9/sub10}">
+    <div>
+        <input type="checkbox" name="hobby" id="" value="baseball">
+        야구
+        <input type="checkbox" name="hobby" id="" value="basketball">
+        농구
+        <input type="checkbox" name="hobby" id="" value="football">
+        축구
+        <input type="checkbox" name="hobby" id="" value="rugby">
+        럭비
+        <input type="checkbox" name="hobby" id="" value="meatball">
+        미트볼
+    </div>
+
+    <!--    연습 : 체크하면 hello라는 값이 넘어갈 수 있는 checkbox 만들기-->
+    <div>
+        <input type="checkbox" name="accept2" value="hello" checked>
+    </div>
+    <!-- checkbox-->
+    <div>
+        <input type="checkbox" name="accept" value="true">
+    </div>
+    <div>
+        <input type="submit" value="전송">
+    </div>
+</form>
+<hr>
+
+<form action="@{/main9/sub9}">
+    <!--    숨겨진 input요소-->
+    <div>
+        <input type="hidden" name="hidden" value="숨겨진값">
+    </div>
+    <!--    file-->
+    <div>
+        <input type="file" name="file">
+    </div>
+    <!--    email-->
+    <div>
+        <input type="email" name="email">
+    </div>
+    <!--    날짜와 시간을 같이-->
+    <div>
+        <input type="datetime-local">
+    </div>
+    <!--    날짜 필드-->
+    <div>
+        <input type="date">
+    </div>
+    <!--    password field-->
+    <div>
+        <input type="password" name="pw">
+    </div>
+    <!--        text field-->
+    <div>
+        <input type="text" name="name">
+    </div>
+    <!--    number field-->
+    <div>
+        <input type="number" min="0" max="100" step="0.1" name="score">
+    </div>
+    <!--        submit버튼-->
+    <div>
+        <input type="submit">
+    </div>
+
+
+</form>
+<hr>
+<form action="@{/main9/sub8}">
+    <!--    value속성 : 기본값 적용-->
+    <input type="text" name="address" value="seoul">
+    <!--    연습 : input 요소 만들기
+    name, age 요청 파라미터를 작성할 수 있는
+    input 요소 만들기
+    name 의 기본 값 홍길동
+    age의 기본값은 1로-->
+
+    <input type="text" name="name" value=홍길동>
+    <input type="text" name="age" value=1>
+
+
+    <button>저장</button>
+
+</form>
+
+<hr>
+<form action="@{/main9/sub7}">
+    <!--input으로 만든 submit버튼-->
+    <input type="submit">
+    <!--    button으로 만든 submit버튼-->
+    <button>저장</button>
+
+    <!--    그냥 버튼들 눌러도 아무일도 일어나지 않음.-->
+    <input type="button" value="걍버튼">
+    <button type="button">그냥버튼</button>
+</form>
+
+<hr>
+<!--form요소를 만들어보기-->
+<!--submit버튼을 클릭하면 /main9/sub6 에-->
+<!--address, age, city요청 파라미터가 전송될 수 있게-->
+<!--/main9/sub5의 요청경로에서 일하는 request handler method 만들기-->
+<form action="@{/main9/sub6}">
+    <div>
+        <input type="text" name="address">
+    </div>
+    <div>
+        <input type="text" name="age">
+    </div>
+    <div>
+        <input type="text" name="city">
+    </div>
+    <div>
+        <input type="submit" value="저장">
+    </div>
+</form>
+<hr>
+<!-- form 사용자가 입력한 내용을 쿼리스트링에 붙여서 요청을 보냄 -->
+<!-- action 속성 : 쿼리스트링(리퀘스트 파라미터)를 어디로 보낼 지 결정 -->
+<form action="@{/main9/sub5}">
+    <!-- form 요소들(input,textarea,select) : 쿼리스트링(리퀘스트 파라미터)를 완성하는 요소 -->
+    <!--  input, type=text -->
+    <!--  name 속성 : 리퀘스트 파라미터 의 이름-->
+    <div>
+        <input type="text" name="keyword">
+    </div>
+    <div>
+        <input type="text" name="email">
+    </div>
+    <!-- submit button : 클릭하면 form 내의 요소들로 쿼리스트링을 만들어서 action 으로 요청보냄 -->
+    <div>
+        <input type="submit" value="저장">
+    </div>
+</form>
+
+</body>
+</html>

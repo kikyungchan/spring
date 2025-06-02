@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>main9/sub.html</h3>
+<a th:href="@{/main9/sub2(name='son',age=55,address='seoul')}">to /main9/sub2 </a>
+<br>
+<!-- 링크를 클릭하면 /main9/sub3?email=yahoo&married=true&city=seoul&team=paris -->
+<a th:href="@{/main9/sub3(email='yahoo',married=true,city='seoul',team='paris')}">to /main9/sub3</a>
+<!-- 컨트롤러9에 3번째 메소드 만들어서 ,email married city team 요소를 출력하는코드-->
+</body>
+</html>
