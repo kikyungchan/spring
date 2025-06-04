@@ -53,3 +53,9 @@ FROM Shippers;
 # SELECT : 열을 선택
 # FROM : 테이블 지정
 # WHERE :  행을 선택(filter)
+SELECT *
+FROM Shippers;
+SELECT *
+FROM Customers;
+SELECT *
+From Employees;
