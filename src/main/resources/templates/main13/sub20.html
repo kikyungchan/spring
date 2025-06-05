@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table, tr, th, td {
+            border-collapse: collapse;
+            border: 2px solid rgba(255, 192, 203, 0.67);
+            text-align: center;
+            padding: 3px;
+        }
+
+        table {
+            width: 100%;
+        }
+
+        h3 {
+            font-size: 200%;
+        }
+
+    </style>
+</head>
+<body>
+<div style="justify-items: center">
+<h3>공급자 목록</h3>
+<hr>
+<form th:action="@{/main13/sub20}">
+    <label>
+        국가
+        <select name="country">
+            <option th:each="country : ${countryList}"
+                    th:value="${country}"
+                    th:selected="${param.country != null and param.country[0] == country}"
+                    th:text="${country}">
+
+            </option>
+        </select>
+    </label>
+    <button>조회</button>
+</form>
+<hr>
+    <p th:if="${supplierList == null || supplierList.isEmpty()}">조회된 결과가 없습니다.</p>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>SupplierName</th>
+        <th>ContactName</th>
+        <th>Address</th>
+        <th>City</th>
+        <th>Post</th>
+        <th>Country</th>
+        <th>Phone</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="supplier : ${supplierList}">
+        <td th:text="${supplier.supplierId}"></td>
+        <td th:text="${supplier.supplierName}"></td>
+        <td th:text="${supplier.contactName}"></td>
+        <td th:text="${supplier.address}"></td>
+        <td th:text="${supplier.city}"></td>
+        <td th:text="${supplier.post}"></td>
+        <td th:text="${supplier.country}"></td>
+        <td th:text="${supplier.phone}"></td>
+    </tr>
+    </tbody>
+</table>
+</div>
+</body>
+</html>

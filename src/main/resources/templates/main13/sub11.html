@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table,tr,td,th {
+            border-collapse: collapse;
+            border: 1px solid black;
+            text-align: center;
+            width: 50%;
+            height: 50%;
+            padding: 3px;
+        }
+    </style>
+</head>
+<body>
+<h3 style="text-align: center">고객 정보 목록</h3>
+<div style="justify-items: center">
+
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Contact</th>
+        <th>Address</th>
+        <th>City</th>
+        <th>Country</th>
+        <th>CodeNumber</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="customer : ${customerList}">
+        <td th:text="${customer.CustomerID}"></td>
+        <td th:text="${customer.CustomerName}"></td>
+        <td th:text="${customer.ContactName}"></td>
+        <td th:text="${customer.Address}"></td>
+        <td th:text="${customer.City}"></td>
+        <td th:text="${customer.Country}"></td>
+        <td th:text="${customer.PostalCode}"></td>
+    </tr>
+    </tbody>
+</table>
+</div>
+</body>
+</html>

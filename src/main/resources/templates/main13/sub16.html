@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table, tr, th, td {
+            border-collapse: collapse;
+            border: 2px solid rgba(255, 192, 203, 0.67);
+            text-align: center;
+            padding: 3px;
+        }
+
+        table {
+            width: 100%;
+        }
+
+        h3 {
+            font-size: 200%;
+        }
+
+    </style>
+</head>
+<body>
+<div style="justify-items: center">
+    <h3>상품 목록</h3>
+    <hr>
+    <form th:action="@{/main13/sub16}">
+        <label>
+            카테고리 번호
+            <input type="number" name="categoryId" min="1" max="8"
+                   th:value="${param.categoryId ?: 1}">
+        </label>
+        <button>조회</button>
+    </form>
+    <hr>
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Supplier</th>
+            <th>Category</th>
+            <th>Unit</th>
+            <th>Price</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="product : ${productList}">
+            <td th:text="${product.id}"></td>
+            <td th:text="${product.name}"></td>
+            <td th:text="${product.supplier}"></td>
+            <td th:text="${product.category}"></td>
+            <td th:text="${product.unit}"></td>
+            <td th:text="${product.price}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>/main13/sub7.html</h3>
+
+<ul>
+    <li th:each="Quantity : ${Quantitylist}">남은 수량
+        <span th:text="${Quantity}"></span>
+        개
+    </li>
+</ul>
+</body>
+</html>

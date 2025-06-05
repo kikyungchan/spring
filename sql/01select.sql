@@ -59,3 +59,11 @@ SELECT *
 FROM Customers;
 SELECT *
 From Employees;
+
+SELECT *
+FROM Products
+limit 1;
+
+
+
+
