@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table, tr, th, td {
+            border-collapse: collapse;
+            border: 2px solid rgba(255, 192, 203, 0.67);
+            text-align: center;
+            padding: 3px;
+        }
+
+        table {
+            width: 100%;
+        }
+
+        h3 {
+            font-size: 200%;
+        }
+
+    </style>
+</head>
+<body style="justify-items: center">
+<h3>공급자 출력</h3>
+<!--table>thead>tr>th*8^^tbody>tr>td*8-->
+<table th:if="${supplierList.size>0}">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>SNAME</th>
+        <th>CNAME</th>
+        <th>Address</th>
+        <th>City</th>
+        <th>Post</th>
+        <th>Country</th>
+        <th>Phone</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="spl: ${supplierList}">
+        <td th:text="${spl.supplierId}"></td>
+        <td th:text="${spl.supplierName}"></td>
+        <td th:text="${spl.contactName}"></td>
+        <td th:text="${spl.address}"></td>
+        <td th:text="${spl.city}"></td>
+        <td th:text="${spl.post}"></td>
+        <td th:text="${spl.country}"></td>
+        <td th:text="${spl.phone}"></td>
+    </tr>
+    </tbody>
+</table>
+<div style="margin: 10px" >
+    <span  th:each="num: ${#numbers.sequence(1,lastPage)}">
+        <a th:href="@{/main15/sub2(page=${num})}"
+           th:text="${num}">
+        </a>
+         |
+    </span>
+</div>
+</body>
+</html>

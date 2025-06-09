@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table, tr, th, td {
+            border-collapse: collapse;
+            border: 2px solid rgba(255, 192, 203, 0.67);
+            text-align: center;
+            padding: 3px;
+        }
+
+        table {
+            width: 100%;
+        }
+
+        h3 {
+            font-size: 200%;
+        }
+
+    </style>
+</head>
+<body>
+<h3>고객명 조회하는 코드</h3>
+<!--table>thead>tr>th*7^^tbody>tr>td*7-->
+<hr>
+<form th:action="@{/main14/sub2}">
+    <label>
+        고객명
+        <input type="text" name="keyword" th:value="${param.keyword?:''}">
+    </label>
+    <button>조회</button>
+
+</form>
+<hr>
+<table>
+    <thead>
+    <tr>
+        <th>CID</th>
+        <th>Address</th>
+        <th>CustomerName</th>
+        <th>ContactName</th>
+        <th>City</th>
+        <th>Country</th>
+        <th>Post</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="Cs :${list}">
+        <td th:text="${Cs.id}"></td>
+        <td th:text="${Cs.address}"></td>
+        <td th:text="${Cs.name}"></td>
+        <td th:text="${Cs.contactName}"></td>
+        <td th:text="${Cs.city}"></td>
+        <td th:text="${Cs.country}"></td>
+        <td th:text="${Cs.postalCode}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
