@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            justify-items: center;
+            height: 100%;
+            width: 100%;
+        }
+        table, tr, th, td {
+            border-collapse: collapse;
+            border: 2px solid rgba(255, 192, 203, 0.67);
+            text-align: center;
+            padding: 3px;
+        }
+        table {
+            width: 70%;
+
+        }
+        h3 {
+            font-size: 200%;
+        }
+    </style>
+</head>
+<body>
+<h3>새 고객 정보 입력</h3>
+<hr>
+<form th:action="@{/main16/sub1}" method="post">
+    <div>
+        <label>
+            고객명
+            <input type="text" name="name">
+        </label>
+    </div>
+    <div>
+        <label>
+            계약명
+            <input type="text" name="contactName">
+        </label>
+    </div>
+    <div>
+        <label>
+            주소
+            <input type="text" name="address">
+        </label>
+    </div>
+    <div>
+        <label>
+            도시
+            <input type="text" name="city">
+        </label>
+    </div>
+    <div>
+        <label>
+            우편번호
+            <input type="text" name="postalCode">
+        </label>
+    </div>
+    <div>
+        <label>
+            국가
+            <input type="text" name="country">
+        </label>
+    </div>
+    <div>
+        <button>등록</button>
+    </div>
+</form>
+<hr>
+<table>
+    <thead>
+    <tr>
+        <td>id</td>
+        <td>name</td>
+        <td>contactname</td>
+        <td>address</td>
+        <td>city</td>
+        <td>postalcode</td>
+        <td>counrtry</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="customer : ${customerList}">
+        <td th:text="${customer.id}"></td>
+        <td th:text="${customer.name}"></td>
+        <td th:text="${customer.contactName}"></td>
+        <td th:text="${customer.address}"></td>
+        <td th:text="${customer.city}"></td>
+        <td th:text="${customer.postalCode}"></td>
+        <td th:text="${customer.country}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

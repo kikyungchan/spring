@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            justify-items: center;
+            height: 100%;
+            width: 100%;
+        }
+
+        table, tr, th, td {
+            border-collapse: collapse;
+            border: 2px solid rgba(255, 192, 203, 0.67);
+            text-align: center;
+            padding: 3px;
+        }
+
+        table {
+            width: 70%;
+
+        }
+
+        h3 {
+            font-size: 200%;
+        }
+    </style>
+</head>
+<body>
+<h3>공급자 등록</h3>
+<hr>
+<form th:action="@{/main16/sub2}" method="post">
+    <div>
+        <label>
+            고객명
+            <input type="text" name="supplierName">
+        </label>
+    </div>
+    <div>
+        <label>
+            계약명
+            <input type="text" name="contactName">
+        </label>
+    </div>
+    <div>
+        <label>
+            주소
+            <input type="text" name="address">
+        </label>
+    </div>
+    <div>
+        <label>
+            도시
+            <input type="text" name="city">
+        </label>
+    </div>
+    <div>
+        <label>
+            우편번호
+            <input type="text" name="post">
+        </label>
+    </div>
+    <div>
+        <label>
+            국가
+            <input type="text" name="country">
+        </label>
+    </div>
+    <div>
+        <label>
+            개인번호
+            <input type="text" name="phone">
+        </label>
+    </div>
+    <div>
+        <button>등록</button>
+    </div>
+</form>
+<hr>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>SupplierName</th>
+        <th>ContactName</th>
+        <th>Address</th>
+        <th>City</th>
+        <th>Post</th>
+        <th>Country</th>
+        <th>Phone</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="supplier : ${supplierList}">
+        <td th:text="${supplier.supplierId}"></td>
+        <td th:text="${supplier.supplierName}"></td>
+        <td th:text="${supplier.contactName}"></td>
+        <td th:text="${supplier.address}"></td>
+        <td th:text="${supplier.city}"></td>
+        <td th:text="${supplier.post}"></td>
+        <td th:text="${supplier.country}"></td>
+        <td th:text="${supplier.phone}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
