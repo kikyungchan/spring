@@ -9,7 +9,7 @@ public class SupplierDto {
     private String contactName;
     private String address;
     private String city;
-    private String post;
+    private String postalCode;
     private String country;
     private String phone;
 }

@@ -767,7 +767,7 @@ public class Controller13 {
             dto.setContactName(resultSet1.getString("ContactName"));
             dto.setAddress(resultSet1.getString("Address"));
             dto.setCity(resultSet1.getString("City"));
-            dto.setPost(resultSet1.getString("PostalCode"));
+            dto.setPostalCode(resultSet1.getString("PostalCode"));
             dto.setCountry(resultSet1.getString("Country"));
             dto.setPhone(resultSet1.getString("Phone"));
             list1.add(dto);

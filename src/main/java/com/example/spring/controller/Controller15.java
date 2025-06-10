@@ -112,7 +112,7 @@ public class Controller15 {
             dto.setContactName(rs.getString("ContactName"));
             dto.setAddress(rs.getString("Address"));
             dto.setCity(rs.getString("City"));
-            dto.setPost(rs.getString("PostalCode"));
+            dto.setPostalCode(rs.getString("PostalCode"));
             dto.setCountry(rs.getString("Country"));
             dto.setPhone(rs.getString("Phone"));
             Supplierlist.add(dto);
