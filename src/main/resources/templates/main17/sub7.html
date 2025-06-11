@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>테이블에 정보 넣기</h3>
+<form th:action="@{/main17/sub7}" method="post">
+    <div>
+        이름
+        <input type="text" name="name" placeholder="이름">
+    </div>
+    <div>
+        생일
+        <input type="date" name="birth_date">
+    </div>
+    <div>
+        점수
+        <input type="number" name="score" step="0.01" placeholder="점수">
+    </div>
+    <div>
+        태어난 날짜 시간
+        <input type="datetime-local" name="born_at">
+    </div>
+    <div>
+        <input type="submit">
+    </div>
+</form>
+</body>
+</html>
