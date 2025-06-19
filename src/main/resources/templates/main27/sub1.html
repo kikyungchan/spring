@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>
+    파일 업로드 예제
+</h3>
+<!--/*
+여러 파일을 올리는 form, request handler method, service 메소드
+*/-->
+<form th:action="@{/main27/sub4}" method="post" enctype="multipart/form-data">
+    <input type="file" name="upload" accept="image/*" multiple>
+    <button>전송</button>
+</form>
+<hr>
+<form th:action="@{/main27/sub3}" method="post" enctype="multipart/form-data">
+    <input type="file" name="upload" accept="image/*" multiple>
+    <button>전송</button>
+</form>
+
+<!--/*
+연습
+아래 form을 완성하고
+controller에 request hander method
+service
+C:/Temp/uploadFiles/ 안에 업로드 한 파일 저장
+*/-->
+<form th:action="@{/main27/sub2}" method="post" enctype="multipart/form-data">
+    <div>
+        <label for="fileText2">주소</label>
+        <input type="text" id="fileText2" name="address">
+    </div>
+    <div>
+        <label for="fileInput2">파일</label>
+        <input type="file" id="fileInput2" name="uploadFile">
+    </div>
+    <button>전송</button>
+</form>
+<hr>
+<!--파일은 항상 포스트방식/겟방식은 길이제한&주소창에 노출-->
+<form th:action="@{/main27/sub1}" method="post" enctype="multipart/form-data">
+    <div>
+        <label for="fileText1">사용자명</label>
+        <input type="text" name="username" id="fileText1">
+    </div>
+    <div>
+        <label for="fileInput1">파일</label>
+        <input type="file" name="upload" id="fileInput1">
+    </div>
+    <button>전송</button>
+</form>
+
+</body>
+</html>

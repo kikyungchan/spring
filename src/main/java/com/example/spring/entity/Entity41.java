@@ -11,8 +11,8 @@ import java.time.LocalDate;
 @Setter
 @ToString
 @Entity
-@Table(name = "my_table30", schema = "jpa")
-public class Entity30 {
+@Table(name = "my_table41", schema = "jpa")
+public class Entity41 {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
@@ -21,13 +21,11 @@ public class Entity30 {
     @Column(name = "order_date")
     private LocalDate orderDate;
 
-    @Column(name = "info", length = 20)
-    private String info;
+    @ManyToOne
+    @JoinColumn(name = "product_id")
+    private Entity39 product;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "employee_id")
-    @ToString.Exclude
-
-    private Entity29 employee;
+    @Column(name = "quantity")
+    private Integer quantity;
 
 }
