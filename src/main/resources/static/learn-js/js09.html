@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 배열
+    const a = [3, 5, 7, -9, -1, 2];
+    const b = a; // 참조값 복사
+    b[0] = -3;
+    console.log(b);
+    console.log(a);
+
+    // 같은 값을 가진 새 배열로 복사
+    const c = a.map(e => e); // 잘 안쓰임
+    c[0] = 33;
+    console.log(c);
+    console.log(a);
+    // slice() : 잘 안씀
+    const d = a.slice(0, a.length);
+    d[0] = 333;
+    console.log(d);
+    console.log(a);
+
+    //for() : 잘 안씀
+    const e = [];
+    for (const item of a) {
+        e.push(item);
+    }
+    e[0] = 3333;
+    console.log(e);
+    console.log(a);
+
+    // spread 연산자 : ...
+    // 자주 씀
+    [...a]; // [-3,5,7,-9,-1,2]
+    const f = [...a];
+    console.log(f);
+    console.log(a);
+    f[0] = -33;
+    console.log(f);
+    console.log(a);
+
+    // spread
+    const g = [6, 7, 8];
+    const h = [...g];
+    const i = [...g, 1];
+    const j = [2, ...g];
+    console.log(g);
+    console.log(h);
+    console.log(i);
+    console.log(j);
+
+    //연습
+    const k = ["css", "react", "vue"];
+    const l = [...k];
+    const m = ["java", ...k];
+    const n = [...k, "spring"];
+    console.log(l); // css,react,vue
+    console.log(m); // java css react vue
+    console.log(n); // css react vue spring
+    let 겁나배고프네 = ["css", "react", "vue"];
+    겁나배고프네[0] = "java";
+    console.log(겁나배고프네);
+
+</script>
+</body>
+</html>
