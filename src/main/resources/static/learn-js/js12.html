@@ -7,7 +7,8 @@
 <body>
 <script>
     // 객체 복사
-    // 얕은복사 : 참조값복사
+    // 얕은복사
+
     const a = {
         name: "son", age: 44,
         address: {
@@ -15,11 +16,20 @@
             contry: "uk"
         }
     };
+
     const b = {...a};
+
     b.name = "kim";
     b.address.city = "seoul";
+
     console.log(b);
     console.log(a);
+
+
+
+
+
+
     //깊은복사 : 값자체를복사
     const c = {
         name: "kim",
